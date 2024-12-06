@@ -1,0 +1,74 @@
+package com.isteer.sql.queries;
+
+public class SqlQueries {
+
+	private SqlQueries() {
+
+	}
+
+	public static final String ADD_USER = "INSERT INTO USER (USERNAME,USERFULLNAME,USEREMAIL,USERPASSWORD) VALUES(?,?,?,?)";
+
+	public static final String ADD_ADDRESS = "INSERT INTO ADDRESS (FK_ADDRESS_USERID,ADDRESS) VALUES(?,?)";
+
+	public static final String ADD_ROLES = "INSERT INTO AUTHORITY (FK_AUTHORITY_USERID,ROLE) VALUES(?,?)";
+
+	public static final String UPDATE_USER_BY_ADMIN = "ISACCOUNTNONEXPIRED=?,ISACCOUNTNONLOCKED=?,ISCREDENTIALSNONEXPIRED=?,ISENABLED=? WHERE USERID=?";
+
+	public static final String DELETE_USER = "DELETE FROM USER WHERE USERID=?";
+
+	public static final String DELETE_ADDRESS = "DELETE FROM ADDRESS WHERE FK_ADDRESS_USERID=?";
+
+	public static final String DELETE_ROLES = "DELETE FROM AUTHORITY WHERE FK_AUTHORITY_USERID=?";
+
+	public static final String GET_USER_BY_ID = "call getUserById(?)";
+
+	public static final String GET_ADDRESS_BY_ID = "SELECT ADDRESS FROM ADDRESS WHERE FK_ADDRESS_USERID=?";
+
+	public static final String GET_ROLES_BY_ID = "SELECT ROLE FROM AUTHORITY WHERE FK_AUTHORITY_USERID=?";
+
+	public static final String GET_ALL_USERS = "call getAllUser()";
+
+	public static final String GET_USER_BY_USERNAME = "call getUserByName(?)"
+			+ "";
+
+	public static final String INSERT_PRIVILEGES = "INSERT INTO PRIVILEGES(FK_PRIVILEGES_USERID,PRIVILEGE) VALUES(?,?)";
+
+	public static final String INSERT_USER_PRIVILEGES = "INSERT INTO PRIVILEGES(FK_PRIVILEGES_USERID) VALUES(?)";
+
+	public static final String DELETE_PRIVILEGES = "DELETE FROM PRIVILEGES WHERE FK_PRIVILEGES_USERID=?";
+
+	public static final String GET_PRIVILEGES = "SELECT PRIVILEGE FROM PRIVILEGES WHERE FK_PRIVILEGES_USERID=?";
+
+	public static final String GET_ADDRESS_BY_USERID = "SELECT ADDRESS FROM ADDRESS WHERE FK_ADDRESS_USERID=?";
+
+	public static final String GET_ADDRESS_BY_USERID_AND_ADDRESSID = "SELECT ADDRESS FROM ADDRESS WHERE FK_ADDRESS_USERID=? AND ADDRESSID=?";
+
+	public static final String ADDRESS_ID_FOUNDER = "SELECT ADDRESS FROM ADDRESS WHERE ADDRESSID=?";
+
+	public static final String ADD_END_POINT = "INSERT INTO ENDPOINTS(ENDPOINTNAME) VALUES(?)";
+
+	public static final String ADD_AUTHORIZATION = "INSERT INTO AUTHORIZATION(FK_AUTHORIZATION_ENDPOINTSID,PRIVILEGE) VALUES(?,?)";
+
+	public static final String DELETE_AUTHORIZATION = "DELETE FROM AUTHORIZATION WHERE FK_AUTHORIZATION_ENDPOINTSID=?";
+
+	public static final String END_POINT_ID_FOUNDER = "SELECT ENDPOINTNAME FROM ENDPOINTS WHERE ENDPOINTID=?";
+
+	public static final String GET_ALL_END_POINT = "call GETALLPOINTS()";
+
+	public static final String GET_ALL_AUTHORIZATION = "SELECT PRIVILEGE FROM AUTHORIZATION WHERE FK_AUTHORIZATION_ENDPOINTSID=?";
+
+	public static final String GET_DUBLICATE_USERNAME = "SELECT COUNT(USERNAME) AS COUNT FROM USER WHERE USERNAME=? AND USERID!=?";
+
+	public static final String GET_DUBLICATE_EMAIL = "SELECT COUNT(USEREMAIL) AS COUNT FROM USER WHERE USEREMAIL=? AND USERID!=?";
+
+	public static final String ADD_VALID_TOKEN = "INSERT INTO VALIDTOKENLIST (JWT,ISSUEDTIME,EXPIREDTIME) VALUES (?,?,?)";
+
+	public static final String TOKEN_IS_VALID = "SELECT JWT FROM VALIDTOKENLIST WHERE JWT=?";
+
+	public static final String DELET_VALID_TOKEN = "DELETE FROM VALIDTOKENLIST WHERE JWT=?";
+	public static final String UPDATE_INVALID_ATTEMPT = "update user set invalidAttempt=? where username=?";
+
+	public static final String DISABLE_USER = "update user set isAccountNonLocked=? where username=?";
+
+
+}

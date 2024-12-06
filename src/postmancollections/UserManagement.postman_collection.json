@@ -1,0 +1,372 @@
+{
+	"info": {
+		"_postman_id": "ee161f5c-1ea9-43bf-8dfe-ce24a58e19f2",
+		"name": "UserManagement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29913340",
+		"_collection_link": "https://planetary-trinity-104216.postman.co/workspace/RK_SPRINGSECURITY~60033329-4d47-4d02-9dc9-a64d12528985/collection/29913340-ee161f5c-1ea9-43bf-8dfe-ce24a58e19f2?action=share&source=collection_link&creator=29913340"
+	},
+	"item": [
+		{
+			"name": "getAllUsers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJSYWprYW1sMTIiLCJpcCI6IjE5Mi4xNjguMS44NyIsImV4cCI6MTczMTUwNjE2OCwiaWF0IjoxNzMxNDg4MTY4LCJqdGkiOiI5ZDZhZDJiYi0yMDNiLTQ0ZjItOTZkOS0zN2Y5MGY5MWVhZGEifQ.eYOoyTMXmYMkArwq_QmhMLO4fOOUkDQHOh85rHHAqIs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9098/getAllUsers",
+					"host": [
+						"localhost"
+					],
+					"port": "9098",
+					"path": [
+						"getAllUsers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "authenticate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\":\"nethra12\",\r\n    \"userPassword\":\"Admin@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://74.179.81.27:9098/authenticate",
+					"protocol": "http",
+					"host": [
+						"74",
+						"179",
+						"81",
+						"27"
+					],
+					"port": "9098",
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\":\"nethra12\",\r\n    \"userFullName\":\"nethra12\",\r\n    \"userEmail\":\"nethra12@gmail.io\",\r\n    \"userPassword\":\"Admin@123\",\r\n    \"userAddresses\":[\"DVK\"],\r\n    \"userRoles\":[\"ADMIN\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://74.179.81.27:9098/addUser",
+					"protocol": "http",
+					"host": [
+						"74",
+						"179",
+						"81",
+						"27"
+					],
+					"port": "9098",
+					"path": [
+						"addUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserById",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJSYWprYW1sMTIiLCJpcCI6IjE5Mi4xNjguMS44NyIsImV4cCI6MTczMTUwNjE2OCwiaWF0IjoxNzMxNDg4MTY4LCJqdGkiOiI5ZDZhZDJiYi0yMDNiLTQ0ZjItOTZkOS0zN2Y5MGY5MWVhZGEifQ.eYOoyTMXmYMkArwq_QmhMLO4fOOUkDQHOh85rHHAqIs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\":\"Rajkaml\",\r\n    \"userFullName\":\"RajkamalParameswaran\",\r\n    \"userEmail\":\"rajkamal17bca55@gmail.com\",\r\n    \"userPassword\":\"Admin\",\r\n    \"userAddresses\":[\"DVK\"],\r\n    \"userRoles\":[\"ADMIN\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9098/getUserById/89",
+					"host": [
+						"localhost"
+					],
+					"port": "9098",
+					"path": [
+						"getUserById",
+						"89"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SaveAppData",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuZXRocmEiLCJpcCI6IjEwLjAuMC40IiwiZXhwIjoxNzMyMTE3NzkyLCJpYXQiOjE3MzIwOTk3OTIsImp0aSI6ImQ5ODA2YThkLWExNDgtNGFjYS05YzY1LWI3MjBhNDZjOTMwYyJ9.uZz99FSO6aAuYgIzASg3T_c78MYS-uxmVzkNQgvUR-c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"recordId\": \"dda01a35-36fc-467d-b986-2a24e05f98012\",\r\n  \"doctorName\": \"Dr.Krishnan\",\r\n  \"mobileNumber\": \"9876543216\",\r\n  \"emailId\": \"krishnan@gmail.com\",\r\n  \"panNumber\": \"ABCDE1234F1ede\",\r\n  \"salary\": \"75000\",\r\n  \"tdsPercentage\": \"20\",\r\n  \"accountNumber\": \"1234567890123453\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://74.179.81.27:9098/doctorsOnboarding/SaveAppData",
+					"protocol": "http",
+					"host": [
+						"74",
+						"179",
+						"81",
+						"27"
+					],
+					"port": "9098",
+					"path": [
+						"doctorsOnboarding",
+						"SaveAppData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addNewEndPoint",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrYW1sMTIzNCIsImlwIjoiMTkyLjE2OC4xLjg3IiwiZXhwIjoxNzMxOTI4NDIyLCJpYXQiOjE3MzE5MTA0MjIsImp0aSI6ImE1MzY4OTliLTZiM2ItNGMzZC05MjdjLWQyYTkyNDQ0N2RmOSJ9.ZpvgqlsA56epP8QGX2dg283sFHfjisBwtr3SiMYB1pw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"endPointName\":\"/doctorsOnboarding/getAppDataWithUser1\",\r\n    \"authorities\":[\"PERMITALL\",\"ADMIN\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9098/addNewEndPoint",
+					"host": [
+						"localhost"
+					],
+					"port": "9098",
+					"path": [
+						"addNewEndPoint"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateAppData",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrYW1sMTIzNCIsImlwIjoiMTkyLjE2OC4xLjQzIiwiZXhwIjoxNzMxODczMzM4LCJpYXQiOjE3MzE4NTUzMzgsImp0aSI6IjM3MTMzZDI5LWI4YmYtNDM5MS1hNGFiLWYzYzQzZjkwNzU4YiJ9.QwsasraTA1WMXYIwFJQaw-PoB86V2e3E5xO4_5LMvNs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"recordId\": \"REC123\",\r\n  \"doctorName\": \"Dr. John Doe123\",\r\n  \"mobileNumber\": \"9876543210\",\r\n  \"emailId\": \"johndoe@example.com\",\r\n  \"panNumber\": \"ABCDE1234F\",\r\n  \"salary\": \"75000\",\r\n  \"tdsPercentage\": \"10\",\r\n  \"accountNumber\": \"1234567890123456\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9098/doctorsOnboarding/updateAppData",
+					"host": [
+						"localhost"
+					],
+					"port": "9098",
+					"path": [
+						"doctorsOnboarding",
+						"updateAppData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAppDataByRecordID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuZXRocmEiLCJpcCI6IjEwLjAuMC40IiwiZXhwIjoxNzMyMTE3NzkyLCJpYXQiOjE3MzIwOTk3OTIsImp0aSI6ImQ5ODA2YThkLWExNDgtNGFjYS05YzY1LWI3MjBhNDZjOTMwYyJ9.uZz99FSO6aAuYgIzASg3T_c78MYS-uxmVzkNQgvUR-c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"recordId\": \"REC123\",\r\n  \"doctorName\": \"Dr. John Doe\",\r\n  \"mobileNumber\": \"9876543210\",\r\n  \"emailId\": \"johndoe@example.com\",\r\n  \"panNumber\": \"ABCDE1234F\",\r\n  \"salary\": \"75000\",\r\n  \"tdsPercentage\": \"10\",\r\n  \"accountNumber\": \"1234567890123456\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://74.179.81.27:9098/doctorsOnboarding/getAppData/dda01a35-36fc-467d-b986-2a24e05f9801",
+					"protocol": "http",
+					"host": [
+						"74",
+						"179",
+						"81",
+						"27"
+					],
+					"port": "9098",
+					"path": [
+						"doctorsOnboarding",
+						"getAppData",
+						"dda01a35-36fc-467d-b986-2a24e05f9801"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllAppData",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuZXRocmEiLCJpcCI6IjEwLjAuMC40IiwiZXhwIjoxNzMyMTE3NzkyLCJpYXQiOjE3MzIwOTk3OTIsImp0aSI6ImQ5ODA2YThkLWExNDgtNGFjYS05YzY1LWI3MjBhNDZjOTMwYyJ9.uZz99FSO6aAuYgIzASg3T_c78MYS-uxmVzkNQgvUR-c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://74.179.81.27:9098/doctorsOnboarding/getAllAppData",
+					"protocol": "http",
+					"host": [
+						"74",
+						"179",
+						"81",
+						"27"
+					],
+					"port": "9098",
+					"path": [
+						"doctorsOnboarding",
+						"getAllAppData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAppDataWithUser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuZXRocmEiLCJpcCI6IjEwLjAuMC40IiwiZXhwIjoxNzMyMTE3NzkyLCJpYXQiOjE3MzIwOTk3OTIsImp0aSI6ImQ5ODA2YThkLWExNDgtNGFjYS05YzY1LWI3MjBhNDZjOTMwYyJ9.uZz99FSO6aAuYgIzASg3T_c78MYS-uxmVzkNQgvUR-c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://74.179.81.27:9098/doctorsOnboarding/getAppDataWithUser/dda01a35-36fc-467d-b986-2a24e05f9801",
+					"protocol": "http",
+					"host": [
+						"74",
+						"179",
+						"81",
+						"27"
+					],
+					"port": "9098",
+					"path": [
+						"doctorsOnboarding",
+						"getAppDataWithUser",
+						"dda01a35-36fc-467d-b986-2a24e05f9801"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

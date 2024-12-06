@@ -1,0 +1,74 @@
+Application Setup and Data Encryption Process
+---------------------------------------------
+
+   Information Required to Start the Application:
+   ----------------------------------------------
+   To start the application, certain configurations and credentials must be set up for integration with Azure Key Vault.
+    These details are as follows:
+
+   Configuration Parameters:
+   -------------------------
+
+   AZURE_CLIENT_ID: ${AZURE_CLIENT_ID}
+   AZURE_CLIENT_SECRET: ${AZURE_CLIENT_SECRET}
+   AZURE_TENANT_ID: ${AZURE_TENANT_ID}
+   azure.keyvault.uri: ${VAULT_URL}
+   key.vault.key-name: ${KEY_NAME}
+   These credentials must be configured in the application properties or environment variables for the application to
+   authenticate with Azure Key Vault.
+
+   Steps to Start the Application
+   ------------------------------
+
+   Initialization:
+   ---------------
+   Start the Spring Boot application after configuring the credentials.
+   The application will use the Client ID, Client Secret, and Tenant ID to authenticate with Azure Key Vault.
+
+   Azure Key Vault Integration:
+   ----------------------------
+   Upon successful authentication, the credentials are securely stored as a component
+   in the Spring Boot application for encryption and decryption processes.
+
+   Functionality Overview
+   ----------------------
+
+   1. Handling Client Requests
+   ---------------------------
+   Input: The client sends a request to the server containing sensitive data.
+   Processing:
+    The Spring Boot server identifies the appropriate encryption key using the Azure Key Vault configurations.
+    The request data is prepared for encryption.
+
+   2. Data Encryption
+   ------------------
+   The server encrypts the sensitive client data using the encryption key retrieved from Azure Key Vault.
+   The encrypted data is securely stored in the database.
+
+   3. Data Decryption
+   ------------------
+   For any request requiring sensitive data:
+   The encrypted data is retrieved from the database by the server.
+   The server calls Azure Key Vault again to obtain the decryption key.
+   The server decrypts the data using the retrieved key and provides the original data to the client.
+
+Flow Summary
+------------
+Startup:
+The application initializes with Azure Key Vault credentials.
+
+Client Request Handling:
+Requests are processed securely with encryption mechanisms.
+
+Data Encryption:
+Sensitive data is encrypted before storage.
+
+Data Decryption:
+Encrypted data is retrieved, decrypted, and shared securely.
+This setup ensures the confidentiality, integrity, and security of sensitive client data by leveraging Azure Key Vault for encryption and decryption. It provides a robust and secure architecture for handling sensitive information in the database.
+
+
+
+
+
+
